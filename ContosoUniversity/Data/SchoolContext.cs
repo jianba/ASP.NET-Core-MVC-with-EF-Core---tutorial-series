@@ -30,5 +30,9 @@ namespace ContosoUniversity.Data
             modelBuilder.Entity<CourseAssignment>()
                 .HasKey(c => new { c.CourseID, c.InstructorID });
         }
+
+        public DbSet<ContosoUniversity.Models.Topic> Topic { get; set; }
+
+        public DbSet<ContosoUniversity.Models.Post> Post { get; set; }
     }
 }

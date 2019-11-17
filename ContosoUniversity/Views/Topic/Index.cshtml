@@ -1,0 +1,78 @@
+﻿
+@model ContosoUniversity.Models.ViewModel.TopicsViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Topics</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().TopicId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().OriginalPoster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().PostCount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Topics)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TopicId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OriginalPoster)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PostCount)
+                    </td>
+                    <td>
+                        <a asp-action="CreatePost" asp-route-id="@item.TopicId">Create Post</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().Posts.FirstOrDefault().Poster)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().Posts.FirstOrDefault().Body)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Topics.FirstOrDefault().Posts.FirstOrDefault().TimeStamp)
+                    </th>
+                </tr>
+                foreach (var itemPosts in item.Posts)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => itemPosts.Poster)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => itemPosts.Body)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => itemPosts.TimeStamp)
+                        </td>
+                    </tr>
+                }
+        }
+    </tbody>
+</table>
+

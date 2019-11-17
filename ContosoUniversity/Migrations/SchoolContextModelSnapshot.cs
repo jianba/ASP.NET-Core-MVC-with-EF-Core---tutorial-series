@@ -128,6 +128,25 @@ namespace ContosoUniversity.Migrations
                     b.ToTable("OfficeAssignment");
                 });
 
+            modelBuilder.Entity("ContosoUniversity.Models.Post", b =>
+                {
+                    b.Property<int>("PostId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Body");
+
+                    b.Property<string>("Poster");
+
+                    b.Property<DateTime>("TimeStamp");
+
+                    b.Property<int>("TopicId");
+
+                    b.HasKey("PostId");
+
+                    b.ToTable("Post");
+                });
+
             modelBuilder.Entity("ContosoUniversity.Models.Student", b =>
                 {
                     b.Property<int>("ID")
@@ -148,6 +167,23 @@ namespace ContosoUniversity.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("ContosoUniversity.Models.Topic", b =>
+                {
+                    b.Property<int>("TopicId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("OriginalPoster");
+
+                    b.Property<int>("PostCount");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("TopicId");
+
+                    b.ToTable("Topic");
                 });
 
             modelBuilder.Entity("ContosoUniversity.Models.Course", b =>

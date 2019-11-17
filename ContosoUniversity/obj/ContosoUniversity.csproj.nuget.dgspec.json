@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\Aiursoft\\ContosoUniversity\\ContosoUniversity.csproj": {}
+    "D:\\catch\\StackOverFlow\\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\\ContosoUniversity\\ContosoUniversity.csproj": {}
   },
   "projects": {
-    "C:\\code\\Aiursoft\\ContosoUniversity\\ContosoUniversity.csproj": {
+    "D:\\catch\\StackOverFlow\\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\\ContosoUniversity\\ContosoUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\Aiursoft\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectUniqueName": "D:\\catch\\StackOverFlow\\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\\ContosoUniversity\\ContosoUniversity.csproj",
         "projectName": "ContosoUniversity",
-        "projectPath": "C:\\code\\Aiursoft\\ContosoUniversity\\ContosoUniversity.csproj",
-        "packagesPath": "C:\\Users\\szy\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\Aiursoft\\ContosoUniversity\\obj\\",
+        "projectPath": "D:\\catch\\StackOverFlow\\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\\ContosoUniversity\\ContosoUniversity.csproj",
+        "packagesPath": "C:\\Users\\Szy\\.nuget\\packages\\",
+        "outputPath": "D:\\catch\\StackOverFlow\\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\\ContosoUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\szy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Szy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.4, )"
             }
           },
           "imports": [
@@ -81,7 +81,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100-preview9-014004\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
