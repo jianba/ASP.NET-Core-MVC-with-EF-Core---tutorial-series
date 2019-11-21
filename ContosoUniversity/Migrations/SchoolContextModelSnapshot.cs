@@ -19,6 +19,25 @@ namespace ContosoUniversity.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ContosoUniversity.Models.Cargo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Amount");
+
+                    b.Property<string>("CargoType");
+
+                    b.Property<int?>("OrderId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Cargo");
+                });
+
             modelBuilder.Entity("ContosoUniversity.Models.Course", b =>
                 {
                     b.Property<int>("CourseID");
@@ -128,6 +147,21 @@ namespace ContosoUniversity.Migrations
                     b.ToTable("OfficeAssignment");
                 });
 
+            modelBuilder.Entity("ContosoUniversity.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DropOffAddress");
+
+                    b.Property<string>("PickUpAddress");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Order");
+                });
+
             modelBuilder.Entity("ContosoUniversity.Models.Post", b =>
                 {
                     b.Property<int>("PostId")
@@ -184,6 +218,13 @@ namespace ContosoUniversity.Migrations
                     b.HasKey("TopicId");
 
                     b.ToTable("Topic");
+                });
+
+            modelBuilder.Entity("ContosoUniversity.Models.Cargo", b =>
+                {
+                    b.HasOne("ContosoUniversity.Models.Order")
+                        .WithMany("Cargo")
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("ContosoUniversity.Models.Course", b =>

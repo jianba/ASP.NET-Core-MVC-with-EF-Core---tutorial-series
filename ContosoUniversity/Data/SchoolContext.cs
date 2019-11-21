@@ -34,5 +34,8 @@ namespace ContosoUniversity.Data
         public DbSet<ContosoUniversity.Models.Topic> Topic { get; set; }
 
         public DbSet<ContosoUniversity.Models.Post> Post { get; set; }
+
+        public DbSet<ContosoUniversity.Models.Order> Order { get; set; }
+        public DbSet<ContosoUniversity.Models.Cargo> Cargo { get; set; }
     }
 }
