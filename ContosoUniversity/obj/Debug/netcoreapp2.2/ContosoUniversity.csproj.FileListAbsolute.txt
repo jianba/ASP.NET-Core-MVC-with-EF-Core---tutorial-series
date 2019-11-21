@@ -97,3 +97,4 @@ D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUn
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Topic\Index.cshtml.g.cs
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Topic\CreateTopic.cshtml.g.cs
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Topic\CreatePost.cshtml.g.cs
+D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Order\Index.cshtml.g.cs
