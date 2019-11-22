@@ -12,7 +12,7 @@ namespace ContosoUniversity.Models
     {
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int OrderId { get; set; }
         public string PickUpAddress { get; set; }
         public string DropOffAddress { get; set; }
         public List<Cargo> Cargo { get; set; }
@@ -23,6 +23,8 @@ namespace ContosoUniversity.Models
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int OrderId { get; set; }
+        [ForeignKey("TopicId")]
         public int Amount { get; set; }
         public string  CargoType { get; set; }
     }
