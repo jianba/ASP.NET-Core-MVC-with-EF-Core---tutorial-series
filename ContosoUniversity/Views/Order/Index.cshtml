@@ -1,7 +1,72 @@
 ﻿
+@model ContosoUniversity.Models.OrderViewModels.OrdersViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Topics</h1>
+
+<p>
+    <a asp-action="CreateTopic">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().PickUpAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().DropOffAddress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PickUpAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DropOffAddress)
+            </td>
+            <td>
+                <a asp-action="CreatePost" asp-route-id="@item.OrderId">Create Post</a>
+            </td>
+        </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Cargos.FirstOrDefault().OrderId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model =>  model.Orders.FirstOrDefault().Cargos.FirstOrDefault().Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model =>  model.Orders.FirstOrDefault().Cargos.FirstOrDefault().CargoType)
+                </th>
+            </tr>
+            foreach (var itemCargos in item.Cargos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemCargos.OrderId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemCargos.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => itemCargos.CargoType)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 
