@@ -7,7 +7,7 @@
 <h1>Topics</h1>
 
 <p>
-    <a asp-action="CreateTopic">Create New</a>
+    <a asp-action="CreateOrder">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -27,29 +27,33 @@
     <tbody>
         @foreach (var item in Model.Orders)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.OrderId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PickUpAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DropOffAddress)
-            </td>
-            <td>
-                <a asp-action="CreatePost" asp-route-id="@item.OrderId">Create Post</a>
-            </td>
-        </tr>
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PickUpAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DropOffAddress)
+                </td>
+            </tr>
+            <tr>
+
                 <th>
-                    @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Cargos.FirstOrDefault().OrderId)
+                    <font color="#FF0000">
+                        @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Cargos.FirstOrDefault().OrderId)
+                    </font>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model =>  model.Orders.FirstOrDefault().Cargos.FirstOrDefault().Amount)
+                    <font color="#FF0000">
+                        @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Cargos.FirstOrDefault().Amount)
+                    </font>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model =>  model.Orders.FirstOrDefault().Cargos.FirstOrDefault().CargoType)
+                    <font color="#FF0000">
+                        @Html.DisplayNameFor(model => model.Orders.FirstOrDefault().Cargos.FirstOrDefault().CargoType)
+                    </font>
                 </th>
             </tr>
             foreach (var itemCargos in item.Cargos)

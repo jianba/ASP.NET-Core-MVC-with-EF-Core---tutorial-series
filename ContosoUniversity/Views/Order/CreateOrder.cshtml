@@ -1,0 +1,41 @@
+﻿@model ContosoUniversity.Models.OrderViewModels.OrderViewModel
+@{
+    ViewData["Title"] = "Create Order";
+}
+
+<h1>Create Order</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Order" asp-action="CreateOrder" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PickUpAddress" class="control-label"></label>
+                <input asp-for="PickUpAddress" class="form-control" />
+                <span asp-validation-for="PickUpAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DropOffAddress" class="control-label"></label>
+                <input asp-for="DropOffAddress" class="form-control" />
+                <span asp-validation-for="DropOffAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoCount" class="control-label"></label>
+                <input asp-for="CargoCount" class="form-control" />
+                <span asp-validation-for="CargoCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

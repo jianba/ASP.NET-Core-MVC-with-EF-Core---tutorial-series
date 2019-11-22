@@ -1,0 +1,48 @@
+﻿@model ContosoUniversity.Models.OrderViewModels.CargoViewModel
+@{
+    ViewData["Title"] = "Create Cargo";
+}
+
+<h1>Create Cargo</h1>
+
+<hr />
+<div>
+    <div>
+        <div class="form-group">
+            <form asp-controller="Order" asp-action="CreateCargo" method="post">
+                @if (Model.CargoCount != 0)
+                {
+                    for (int itemCount = 0; itemCount < Model.CargoCount; itemCount++)
+                    {
+                        <div class="row">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <div class="form-group" style="width:300px; height:auto; float:left; display:inline">
+                                    <label asp-for="@Model.Cargos[itemCount].Amount" class="control-label"></label>
+                                    <input asp-for="@Model.Cargos[itemCount].Amount" class="form-control" />
+                                    <span asp-validation-for="@Model.Cargos[itemCount].Amount" class="text-danger"></span>
+                                </div>
+                                <div class="form-group" style="width:300px; height:auto; float:left; display:inline">
+                                    <label asp-for="@Model.Cargos[itemCount].CargoType" class="control-label"></label>
+                                    <input asp-for="@Model.Cargos[itemCount].CargoType" class="form-control" />
+                                    <span asp-validation-for="@Model.Cargos[itemCount].CargoType" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
