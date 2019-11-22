@@ -15,7 +15,6 @@ namespace ContosoUniversity.Models
         public int OrderId { get; set; }
         public string PickUpAddress { get; set; }
         public string DropOffAddress { get; set; }
-        public List<Cargo> Cargo { get; set; }
     }
 
     public class Cargo
