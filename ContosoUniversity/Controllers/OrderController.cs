@@ -114,6 +114,10 @@ namespace ContosoUniversity.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> CreateOrderAndCargo()
+        {
+            return View();
+        }
 
     }
 }
