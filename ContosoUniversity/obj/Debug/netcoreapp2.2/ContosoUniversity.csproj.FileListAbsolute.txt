@@ -99,5 +99,4 @@ D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUn
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\ContosoUniversity.csproj.CopyComplete
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Order\CreateOrder.cshtml.g.cs
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Order\CreateCargo.cshtml.g.cs
-D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\ContosoUniversity.csprojAssemblyReference.cache
 D:\catch\StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Order\CreateOrderAndCargo.cshtml.g.cs

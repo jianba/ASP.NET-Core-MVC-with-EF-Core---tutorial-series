@@ -1,7 +1,70 @@
-﻿
+﻿@model ContosoUniversity.Models.OrderViewModels.OrderAndCargoViewModel
 @{
     ViewData["Title"] = "CreateOrderAndCargo";
 }
 
 <h1>CreateOrderAndCargo</h1>
 
+<hr />
+
+<div style="width:700px;margin-left:200px;">
+    <form asp-controller="Order" asp-action="CreateOrderAndCargo" method="post">
+
+        <div style="float:left;">
+            <label asp-for="PickUpAddress" class="control-label"></label>
+            <input asp-for="PickUpAddress" class="form-control" />
+            <span asp-validation-for="PickUpAddress" class="text-danger"></span>
+            <br />
+            <label asp-for="DropOffAddress" class="control-label"></label>
+            <input asp-for="DropOffAddress" class="form-control" />
+            <span asp-validation-for="DropOffAddress" class="text-danger"></span>
+            <br />
+            <input id="btnAdd" value="Add" type="button" class="btn btn-primary" onclick="btnAddClick()">
+        </div>
+        <br />
+
+        <div style="float:right;">
+            <table id="tb">
+                <tr>
+                    <th> <label  class="control-label">ID</label></th>
+                    <th>  <label asp-for="@Model.Cargos.FirstOrDefault().Amount" class="control-label"></label> </th>
+                    <th><label asp-for="@Model.Cargos.FirstOrDefault().CargoType" class="control-label"></label></th>
+                </tr>
+                @{
+                    var countId = 0;
+                    for (var itemCount = 0; itemCount < 3; itemCount++)
+                    {
+                        <tr id="trs">
+                            <td>@(++countId)</td>
+                            <td><input asp-for='@Model.Cargos[itemCount].Amount' class= 'form-control' /></td>
+                            <td><input asp-for='@Model.Cargos[itemCount].CargoType' class='form-control' /></td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+        <div style="clear:both;float:right;">
+            <button class="btn btn-primary" type="submit">提交</button>
+        </div>
+
+    </form>
+</div>
+
+@section scripts{
+    <script src="~/js/jquery-3.4.1/jquery-3.4.1.js" type="text/javascript"></script>
+    <script src="~/js/jquery-3.4.1/jquery-ui-1.12.1.js" type="text/javascript"></script>
+    <script src="~/js/jquery-3.4.1/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+    <script>
+        var btnAddClick = function () {
+            var trLen = $("#tb tr[id='trs']").length;
+            var $lastTr = $("#tb tr[id='trs']").last();
+            var tr = "<tr id='trs'>";
+            tr += "<td>" + (trLen + 1) + "</td>";
+            tr += "<td><input class='form-control' type='number' data-val='true' data-val-required='The Amount field is required.' id='Cargos_"+trLen+"__Amount' name='Cargos["+trLen+"].Amount' value=''></td>";
+            tr += "<td><input class='form-control' type='text' id='Cargos_"+trLen+"__CargoType' name='Cargos["+trLen+"].CargoType' value=''>";
+            tr += "</tr>";
+            $(tr).insertAfter($lastTr);
+        }
+    </script>
+}

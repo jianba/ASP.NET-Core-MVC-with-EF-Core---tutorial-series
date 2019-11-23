@@ -119,5 +119,33 @@ namespace ContosoUniversity.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateOrderAndCargo(OrderAndCargoViewModel model)
+        {
+            var order = new Order()
+            {
+                PickUpAddress = model.PickUpAddress,
+                DropOffAddress = model.DropOffAddress
+            };
+            await _context.AddAsync(order);
+            await _context.SaveChangesAsync();
+
+            var orderId = await _context.Order.Select(o => o.OrderId).MaxAsync();
+            var cargos = model.Cargos;
+            foreach (var item in cargos)
+            {
+                var cargo = new Cargo
+                {
+                    OrderId = orderId,
+                    Amount = item.Amount,
+                    CargoType = item.CargoType
+                };
+                await _context.AddAsync(cargo);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
