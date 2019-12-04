@@ -33,8 +33,6 @@ namespace ContosoUniversity.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Cargo");
                 });
 
@@ -203,6 +201,19 @@ namespace ContosoUniversity.Migrations
                     b.ToTable("Student");
                 });
 
+            modelBuilder.Entity("ContosoUniversity.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Test");
+                });
+
             modelBuilder.Entity("ContosoUniversity.Models.Topic", b =>
                 {
                     b.Property<int>("TopicId")
@@ -218,14 +229,6 @@ namespace ContosoUniversity.Migrations
                     b.HasKey("TopicId");
 
                     b.ToTable("Topic");
-                });
-
-            modelBuilder.Entity("ContosoUniversity.Models.Cargo", b =>
-                {
-                    b.HasOne("ContosoUniversity.Models.Order")
-                        .WithMany("Cargo")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ContosoUniversity.Models.Course", b =>

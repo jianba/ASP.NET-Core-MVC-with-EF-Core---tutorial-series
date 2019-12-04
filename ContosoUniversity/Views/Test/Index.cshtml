@@ -1,25 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Index</h1>
-
-@*@model ContosoUniversity.Models.TestViewModels.ArticleViewModel
-
-    @{
+﻿@*@{
         ViewData["Title"] = "Index";
     }
 
-    <h2>@Model.AuthorName</h2>
+    <h1>Index</h1>
+
+    @model ContosoUniversity.Models.TestViewModels.ArticleViewModel
+
+        @{
+            ViewData["Title"] = "Index";
+        }
+
+        <h2>@Model.AuthorName</h2>
 
 
-    @Html.Partial("AuthorPartial", Model.AuthorName)
+        @Html.Partial("AuthorPartial", Model.AuthorName)
 
-    @foreach (var section in @Model.Sections)
-    {
-        @Html.Partial("ArticleSection", section);
-    }*@
+        @foreach (var section in @Model.Sections)
+        {
+            @Html.Partial("ArticleSection", section);
+        }*@
 
+@model ContosoUniversity.Models.TestViewModels.TestAjaxViewModel
 
 @{
     ViewData["Title"] = "CreateOrderAndCargo";
@@ -29,10 +30,26 @@
 
 <hr />
 
-<div style="width:700px;margin-left:200px;">
+<div>
+    <div>
+        <p>123dferdwerfvcedxws</p>
+        <select name="select" class="" id="selectId" onclick="SelectClick()">
+            <option id="optionId" style="width:auto">Test</option>
+            @if (Model.Lists.Count != 0)
+            {
+                int count = Model.Lists.Count();
+                for (int item = 0; item < count; item++)
+                {
+                    <option id="option">@Model.Lists[item].ToString()</option>
+                }
+            }
+        </select>
+    </div>
 
-    <input id="testJsInput" value="132323" type="text" />
-    <input id="btnAdd" value="Add" type="button" class="btn btn-primary" onclick="btnAddClick()">
+    <div>
+        <input id="testJsInput" value="132323" type="text" />
+        <input id="btnAdd" value="Add" type="button" class="btn btn-primary" onclick="btnAddClick()">
+    </div>
 </div>
 
 @section scripts{
@@ -43,17 +60,24 @@
     <script>
         var btnAddClick = function () {
             alert("22222");
+
+            inputVal = $('#testJsInput').val();
+            //alert(inputVal);
+
             $.ajax({
-                url: '/Test/Test',
+                url: '/Test/SaveInputValue',
                 data: {
-                    str : '88488848'
+                    name: inputVal
                 },
                 type: 'post',
-                async: false,
+                async: true,
                 cache: false,
                 success: function (data) {
-                    alert(data);
-                    $("#testJsInput").val(data);
+                    alert(data.code);
+                    var option = "<option id='optionId'>";
+                    option += inputVal;  
+                    option += "<option>";
+                    $("#selectId").append(option);
                 },
                 error: function () {
                     alert('fail');

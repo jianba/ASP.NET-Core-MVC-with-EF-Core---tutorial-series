@@ -37,5 +37,6 @@ namespace ContosoUniversity.Data
 
         public DbSet<ContosoUniversity.Models.Order> Order { get; set; }
         public DbSet<ContosoUniversity.Models.Cargo> Cargo { get; set; }
+        public DbSet<ContosoUniversity.Models.Test> Test { get; set; }
     }
 }
