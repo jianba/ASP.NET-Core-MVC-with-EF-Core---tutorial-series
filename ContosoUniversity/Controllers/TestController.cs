@@ -25,5 +25,11 @@ namespace ContosoUniversity.Controllers
             article.Sections.Add(new ArticleSection() { Title = "title1213", Content = "content121323132" });
             return View(article);
         }
+        
+        [HttpPost]
+        public string Test (string str)
+        {
+            return str + "11111";
+        }
     }
 }
