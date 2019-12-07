@@ -158,3 +158,4 @@ C:\0WorkBench\1-code\5-StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-se
 C:\0WorkBench\1-code\5-StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Test\Index.cshtml.g.cs
 C:\0WorkBench\1-code\5-StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Test\AuthorPartial.cshtml.g.cs
 C:\0WorkBench\1-code\5-StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Test\ArticleSection.cshtml.g.cs
+C:\0WorkBench\1-code\5-StackOverFlow\ASP.NET-Core-MVC-with-EF-Core---tutorial-series\ContosoUniversity\obj\Debug\netcoreapp2.2\Razor\Views\Test\Components\AutoAddListValue\Default.cshtml.g.cs
